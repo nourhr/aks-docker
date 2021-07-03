@@ -14,7 +14,7 @@ spec:
     spec: 
       containers: 
       - name: angular 
-        image: acrkubernates/acrkubernates:#{Build.BUILD_NUMBER}#
+        image: acrkubernates/acrkubernates:#{$BUILD_NUMBER}#
         ports: 
         - containerPort: 80 
 --- 
