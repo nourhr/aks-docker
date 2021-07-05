@@ -1,7 +1,7 @@
 apiVersion: apps/v1 
 kind: Deployment 
 metadata: 
-  name: angular-deployment 
+ - name: angular-deployment 
 spec: 
   selector: 
     matchLabels: 
@@ -21,7 +21,7 @@ spec:
 kind: Service 
 apiVersion: v1 
 metadata: 
-  name: angular-service 
+ - name: angular-service 
 spec: 
   selector: 
     app: angular 
