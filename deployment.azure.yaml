@@ -1,4 +1,4 @@
-apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2 
+apiVersion: apps/v1 
 kind: Deployment 
 metadata: 
   name: angular-deployment 
@@ -6,7 +6,7 @@ spec:
   selector: 
     matchLabels: 
       app: angular 
-  replicas: 2 # tells deployment to run 2 pods matching the template 
+  replicas: 2 
   template:
     metadata: 
       labels: 
@@ -17,8 +17,7 @@ spec:
         image: acrkubernates/acrkubernates:$BUILD_NUMBER
         ports: 
         - containerPort: 80 
---- 
-# https://kubernetes.io/docs/concepts/services-networking/service/#defining-a-service  
+---  
 kind: Service 
 apiVersion: v1 
 metadata: 
@@ -31,5 +30,3 @@ spec:
     port: 80 
     targetPort: 80 
   type: LoadBalancer 
-  
-  
