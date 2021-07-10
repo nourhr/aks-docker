@@ -36,15 +36,15 @@ pipeline {
     }
      stage ('download and connect to AKS Cluster') {
         steps {
-            sh 'az login -u cp-tic-cs@esprit.tn -p &&tunis&&tunis&&'
-            sh 'az aks install-cli'
-            sh 'az aks get-credentials --resource-group prod-rg --name terraform-aks'
+            sh 'sudo -S az login -u cp-tic-cs@esprit.tn -p &&tunis&&tunis&&'
+            sh 'sudo -S az aks install-cli'
+            sh 'sudo -S az aks get-credentials --resource-group prod-rg --name terraform-aks'
             echo 'connected'
         }
     }
     stage ('deploy image to AKS'){
         steps{
-            sh 'kubectl apply -f deployment.azure.yaml '
+            sh 'sudo -S kubectl apply -f deployment.azure.yaml '
         }
     }
     
