@@ -38,7 +38,7 @@ pipeline {
         steps {
             sh 'sudo -S az login -u cp-tic-cs@esprit.tn -p &&tunis&&tunis&&'
             sh 'sudo -S az aks install-cli --install-location=./kubectl'
-            sh 'sudo -S az aks get-credentials --resource-group prod-rg --name terraform-aks'
+            sh 'sudo -S az aks get-credentials --resource-group prod-rg --name terraform-aks --overwrite-existing'
             echo 'connected'
         }
     }
